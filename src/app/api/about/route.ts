@@ -1,10 +1,10 @@
-import { NextRequest, NextResponse } from "next/server";
-import { connectToDatabase } from "@/lib/mongodb";
-import { About } from "@/models/About";
+import { NextRequest, NextResponse } from 'next/server';
+import { connectToDatabase } from '@/lib/mongodb';
+import { About } from '@/models/About';
 
 export async function GET() {
   await connectToDatabase();
-  const about = await About.findOne();
+  const about = await About.findOne().lean();
   return NextResponse.json(about);
 }
 
