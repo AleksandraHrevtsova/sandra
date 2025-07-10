@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { calculateAge, calculateExperience } from "@/lib/dateUtils";
+import Image from "next/image";
 
 type About = {
   name: string;
@@ -34,7 +35,9 @@ export default function AboutSection() {
     <section className="p-6 md:p-12 bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
       <div className="flex flex-col md:flex-row gap-8 items-start">
         {about.photo && (
-          <img
+          <Image
+            width={240}
+            height={240}
             src={about.photo}
             alt={about.name}
             className="w-60 h-60 rounded-full object-cover border-2 border-indigo-400"

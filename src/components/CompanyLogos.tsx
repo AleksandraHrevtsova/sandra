@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -47,7 +47,7 @@ export default function CompanyLogos() {
   return (
     <section className="py-10 px-6 bg-[#f5f7fa]">
       <h2 className="text-2xl font-bold text-center mb-8 text-gray-800">
-        Companies I've Worked With
+        Companies I&apos;ve Worked With
       </h2>
 
       <Swiper
@@ -72,7 +72,9 @@ export default function CompanyLogos() {
               rel="noopener noreferrer"
               className="flex items-center justify-center w-full h-20"
             >
-              <img
+              <Image
+                width={240}
+                height={240}
                 src={company.image}
                 alt={company.name}
                 className="w-full h-full object-contain max-h-16 transition-transform hover:scale-105"
