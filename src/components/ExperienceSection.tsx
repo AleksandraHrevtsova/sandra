@@ -13,21 +13,25 @@ type Experience = {
 };
 
 export default function ExperienceSection() {
-  const [experience, setExperience] = useState<Experience[]>([]);
+  const [experiences, setExperiences] = useState<Experience[]>([]);
+
+  const sortedExperiences = experiences.sort((a, b) => {
+    return new Date(b.from).getTime() - new Date(a.from).getTime();
+  });
 
   useEffect(() => {
     fetch("/api/experience")
       .then((res) => res.json())
-      .then(setExperience);
+      .then(setExperiences);
   }, []);
 
-  if (!experience.length) return null;
+  if (!sortedExperiences.length) return null;
 
   return (
     <section className="p-6 md:p-12 bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
       <h2 className="text-2xl font-bold mb-6">Professional Experience</h2>
       <div className="space-y-8">
-        {experience.map((job) => (
+        {sortedExperiences.map((job) => (
           <div key={job._id} className="border-l-4 border-indigo-500 pl-4">
             <h3 className="text-xl font-semibold">{job.title} — {job.company}</h3>
             <p className="text-sm text-gray-500 dark:text-gray-400">{job.location}</p>

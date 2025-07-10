@@ -3,6 +3,7 @@ import SkillsSection from "@/components/SkillsSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import EducationSection from "@/components/EducationSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import CompanyLogos from "@/components/CompanyLogos";
 
 export default function HomePage() {
   return (
@@ -10,6 +11,7 @@ export default function HomePage() {
       <AboutSection />
       <SkillsSection />
       <ExperienceSection />
+      <CompanyLogos />
       <EducationSection />
       <ProjectsSection />
     </main>

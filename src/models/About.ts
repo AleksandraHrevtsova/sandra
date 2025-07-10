@@ -9,6 +9,8 @@ export interface IAbout extends Document {
   linkedin: string;
   nationality: string;
   drivingLicense: string;
+  birthdate?: string;
+  photo?: string;
   summary: string;
 }
 
@@ -21,6 +23,8 @@ const AboutSchema: Schema<IAbout> = new Schema({
   linkedin: String,
   nationality: String,
   drivingLicense: String,
+  birthdate: String,
+  photo: String,
   summary: String,
 });
 
