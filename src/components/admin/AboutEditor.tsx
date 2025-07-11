@@ -12,6 +12,7 @@ type About = {
   linkedin: string;
   nationality: string;
   drivingLicense: string;
+  startWorkingDate: string;
   summary: string;
 };
 

@@ -23,7 +23,7 @@ export default function ProjectsSection() {
   if (!projects.length) return null;
 
   return (
-    <section className="p-6 md:p-12 bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+    <section id='projects' className="p-6 md:p-12 bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
       <h2 className="text-2xl font-bold mb-6">Projects</h2>
       <div className="grid gap-6 md:grid-cols-2">
         {projects.map((project) => (

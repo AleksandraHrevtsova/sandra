@@ -64,7 +64,7 @@ export default function CompanyLogos() {
           1024: { slidesPerView: 5, spaceBetween: 40 },
         }}
       >
-        {companies.map((company) => (
+        {companies.map((company, idx) => (
           <SwiperSlide key={company.name}>
             <a
               href={company.url}
@@ -75,6 +75,7 @@ export default function CompanyLogos() {
               <Image
                 width={240}
                 height={240}
+                priority={idx < 3} 
                 src={company.image}
                 alt={company.name}
                 className="w-full h-full object-contain max-h-16 transition-transform hover:scale-105"

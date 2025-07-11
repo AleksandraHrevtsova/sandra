@@ -6,6 +6,7 @@ export const metadata = {
   title: "Sandra Hrevtsova | Full Stack Developer",
   description:
     "Experienced Full Stack JavaScript Developer specializing in React, Node.js, and AWS. Portfolio with real projects and tech skills.",
+  metadataBase: new URL("https://sandra-hrevtsova.info"),
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-96x96.png",
@@ -15,11 +16,11 @@ export const metadata = {
     title: "Sandra Hrevtsova | Full Stack Developer",
     description:
       "Check out my portfolio: projects, skills, and experience with modern web technologies.",
-    url: "https://your-domain.vercel.app",
+    url: "https://sandra-hrevtsova.info",
     siteName: "Sandra Hrevtsova Portfolio",
     images: [
       {
-        url: "/og-image.png", // создадим позже
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Sandra Hrevtsova Portfolio",

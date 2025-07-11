@@ -11,6 +11,7 @@ export interface IAbout extends Document {
   drivingLicense: string;
   birthdate?: string;
   photo?: string;
+  startWorkingDate: string;
   summary: string;
 }
 
@@ -25,6 +26,7 @@ const AboutSchema: Schema<IAbout> = new Schema({
   drivingLicense: String,
   birthdate: String,
   photo: String,
+  startWorkingDate: String,
   summary: String,
 });
 

@@ -23,7 +23,7 @@ export default function EducationSection() {
   if (!education.length) return null;
 
   return (
-    <section className="p-6 md:p-12 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white">
+    <section id='education' className="p-6 md:p-12 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white">
       <h2 className="text-2xl font-bold mb-6">Education</h2>
       <div className="space-y-6">
         {education.map((edu) => (

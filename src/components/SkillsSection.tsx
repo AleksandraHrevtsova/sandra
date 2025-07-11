@@ -20,7 +20,7 @@ export default function SkillsSection() {
   if (!skills.length) return null;
 
   return (
-    <section className="p-6 md:p-12 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white">
+    <section id='skills' className="p-6 md:p-12 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white">
       <h2 className="text-2xl font-bold mb-6">Technical Skills</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {skills.map((skill) => (
