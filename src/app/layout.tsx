@@ -1,6 +1,8 @@
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Script from "next/script";
+import Analytics from "@/components/Analytics";
 
 export const metadata = {
   title: "Sandra Hrevtsova | Full Stack Developer",
@@ -40,8 +42,37 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Google Analytics */}
+          {process.env.NEXT_PUBLIC_GA_ID && (
+          <>
+            <Script 
+              id="Cookiebot" 
+              src="https://consent.cookiebot.com/uc.js" 
+              data-cbid="928cdd21-7706-46a4-a30e-819f9c9869fe" 
+              type="text/javascript" 
+              async 
+            />
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
+                  page_path: window.location.pathname,
+                });
+              `}
+            </Script>
+          </>
+        )}
+      </head>
       <body className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
         <Header />
+        <Analytics />
         <main className="pt-[72px]">{children}</main>
         <Footer />
       </body>
